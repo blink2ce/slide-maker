@@ -1,24 +1,43 @@
 <h1>SlideFix</h1>
-<select>
-<option selected disabled>Theme</option>
- <option value="volvo">Web 2.0</option>
- <option value="saab">Green Grass</option>
- <option value="mercedes">Aqua Blue</option>
- <option value="audi">Butterflies</option>
-</select>
-<br>
-<select>
-<option selected disabled>Animation</option>
- <option value="volvo">Fly In</option>
- <option value="saab">Fly Out</option>
- <option value="mercedes">Scoot</option>
-</select>
-<br>
-<textarea [(ngModel)]="markdowncontent" placeholder="Markdown goes here"></textarea>
-<textarea placeholder="Rendered slide appears here">{{markdowncontent}}</textarea>
-<br>
-<button>Remove Slide</button>
-<button>Add Slide</button>
-<button>Download Deck</button>
-<h4>Navigate</h4>
-<p><- -> arrows to browse</p>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Theme
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Web 2.0</a></li>
+                <li><a href="#">Green Grass</a></li>
+                <li><a href="#">Aqua Blue</a></li>
+                <li><a href="#">Butterflies</a></li>
+            </ul>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Animation
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Fly In</a></li>
+                <li><a href="#">Fly Out</a></li>
+                <li><a href="#">Scoot</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row slideRow">
+      <div class="col-sm-6">
+        <textarea id="markdownSlide" class="form-control" [(ngModel)]="markdowncontent" placeholder="Markdown goes here"></textarea>
+      </div>
+      <div class="col-sm-6">
+        <textarea id="renderedSlide" class="form-control" placeholder="Rendered slide appears here">{{markdowncontent}}</textarea>
+      </div>
+    </div>
+    <button class="btn">Remove Slide</button>
+    <button class="btn">Add Slide</button>
+    <button class="btn">Download Deck</button>
+    <h4>Navigate</h4>
+    <p>Use right/left arrow keys to browse.</p>
+</div>
